@@ -15,7 +15,7 @@ const genAI = new GoogleGenerativeAI(API_KEY);
 
 // CORS configuration - ye pehle karo
 app.use(cors({
-  origin: ["http://localhost:5173", "http://localhost:3000"], // Frontend URLs
+  origin: ["http://localhost:5173" || "https://ai-chatbot-client-rho.vercel.app", "http://localhost:3000"], // Frontend URLs
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"]
