@@ -15,11 +15,18 @@ const genAI = new GoogleGenerativeAI(API_KEY);
 
 // CORS configuration - ye pehle karo
 app.use(cors({
-  origin: ["http://localhost:5173" , "http://localhost:3000","https://ai-chatbot-client-rho.vercel.app/"], // Frontend URLs
+  origin: [
+    "http://localhost:5173",
+    "http://localhost:3000",
+    "https://ai-chatbot-client-rho.vercel.app"
+  ],
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
+
+app.options("*", cors()); // Optional but helpful
+
 
 // Body parser middleware - limit increase karo
 app.use(express.json({ limit: '50mb' }));
